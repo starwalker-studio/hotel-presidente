@@ -1,0 +1,245 @@
+@forward "base/index";
+@use "base/responisve-headers.scss" as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: var(--font-weight-light);
+  line-height: 1.7;
+  color: var(--color-charcoal);
+  background-color: var(--color-ivory);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+
+  @include respond-to("lg") {
+    font-size: 1.0625rem;
+  }
+}
+
+img,
+picture,
+video,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+// ---------- ENCABEZADOS ----------
+// Mobile first: tamaños base para móvil, se agrandan en md y lg
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.15;
+  letter-spacing: 0.01em;
+}
+
+h1 {
+  font-size: 2.75rem;
+  font-weight: var(--font-weight-regular);
+  line-height: 1.08;
+
+  @include respond-to("md") {
+    font-size: 4rem;
+  }
+  @include respond-to("lg") {
+    font-size: 5rem;
+  }
+}
+
+h2 {
+  font-size: 2.25rem;
+  margin-bottom: var(--space-md);
+
+  @include respond-to("md") {
+    font-size: 2.75rem;
+  }
+  @include respond-to("lg") {
+    font-size: 3.25rem;
+  }
+}
+
+h3 {
+  font-size: 1.75rem;
+  margin-bottom: var(--space-sm);
+
+  @include respond-to("md") {
+    font-size: 2rem;
+  }
+  @include respond-to("lg") {
+    font-size: 2.25rem;
+  }
+}
+
+h4 {
+  font-size: 1.375rem;
+  margin-bottom: var(--space-xs);
+
+  @include respond-to("lg") {
+    font-size: 1.625rem;
+  }
+}
+
+h5 {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: var(--font-weight-medium);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+h6 {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: var(--font-weight-medium);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+// Párrafo destacado debajo de títulos (subtítulos de sección)
+.lead {
+  font-size: 1.145rem;
+  line-height: 1.8;
+  max-width: 640px;
+
+  @include respond-to("lg") {
+    font-size: 1.45rem;
+  }
+}
+
+strong {
+  font-weight: var(--font-weight-medium);
+  color: var(--color-charcoal);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-slow);
+}
+
+// ---------- LAYOUT ----------
+// .container {
+//   @include container;
+// }
+
+// section {
+//   padding-block: $section-padding-mobile;
+
+//   @include respond-to("lg") {
+//     padding-block: $section-padding-desktop;
+//   }
+// }
+
+// // Secciones con fondo alterno
+// .section--sand {
+//   background-color: $color-sand;
+// }
+// .section--navy {
+//   background-color: $color-navy;
+//   color: $color-ivory;
+
+//   h1,
+//   h2,
+//   h3,
+//   h4 {
+//     color: $color-ivory;
+//   }
+//   p {
+//     color: rgba($color-ivory, 0.75);
+//   }
+// }
+
+// // Encabezado estándar de sección (etiqueta + título + subtítulo)
+// .section-header {
+//   text-align: center;
+//   max-width: 720px;
+//   margin-inline: auto;
+//   margin-bottom: $space-xl;
+
+//   .eyebrow {
+//     display: block;
+//     margin-bottom: $space-sm;
+//   }
+//   .lead {
+//     margin-inline: auto;
+//   }
+// }
+
+// .eyebrow {
+//   @include eyebrow;
+// }
+
+// // Línea dorada decorativa bajo títulos
+// .divider {
+//   width: 60px;
+//   height: 1px;
+//   margin: $space-md auto;
+//   background-color: $color-gold;
+// }
+
+// ---------- ACCESIBILIDAD ----------
+:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 3px;
+}
+
+::selection {
+  background-color: var(--color-gold);
+  color: var(--color-white);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

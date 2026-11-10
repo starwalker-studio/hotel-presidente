@@ -1,0 +1,86 @@
+@forward "/src/scss/base/";
+@use "/src/scss/common/" as *;
+@use "/src/scss/mobile/" as *;
+
+.welcome_section {
+  @include section;
+}
+
+.welcome_container {
+  @include container;
+}
+
+.welcome_wrapper {
+  @include wrapper;
+}
+
+.welcome_content_grid {
+    margin-top: 4.6rem;
+    margin-bottom: 4.6rem;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+    gap: 6ex;
+    padding: 4.6ex;
+    border: solid 1px var(--color-charcoal);
+    @include mobile {
+        display: flex;
+        flex-direction: column;
+        margin-top: 1.6rem;
+        margin-bottom: 1.6rem;
+        padding: 1.6ex;
+    }
+    .content_text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        padding: 1.4ex;
+        @include tablet {
+            h2 {
+                font-size: 2rem;
+            }
+        }
+        p {
+            font-size: 1.2rem;
+            letter-spacing: 2.2px;
+            @include mobile {
+                font-size: .95rem;
+            }
+            @include tablet {
+                font-size: .95rem;
+            }
+        }
+        .est_list {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 3.5ex 0;
+            @include mobile {
+                font-size: .95rem;
+            }
+            @include tablet {
+                font-size: .95rem;
+            }
+        }
+        
+    }
+    .content_img {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 1.4ex;
+        img {
+            width: 100%;
+            height: 520px;
+            object-fit: cover;
+            @include mobile {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}

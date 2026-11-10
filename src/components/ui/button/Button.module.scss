@@ -1,0 +1,49 @@
+@forward "/src/scss/base/";
+@use "/src/scss/mobile/" as *;
+
+.btn {
+  display: inline-block;
+  padding: 0.78rem 2.15rem;
+  font-family: var(--font-body);
+  font-size: 0.9125rem;
+  font-weight: var(--font-weight-medium);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-align: center;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-base);
+  @include mobile {
+    padding: 0.68rem 1.15rem;
+    font-size: 0.7125rem;    
+  }
+
+  &.primary {
+    background-color: var(--color-gold);
+    color: var(--color-white);
+
+    &:hover {
+      background-color: var(--color-gold-dark);
+    }
+  }
+
+  &.outline {
+    border-color: var(--color-gold);
+    color: var(--color-gold-dark);
+
+    &:hover {
+      background-color: var(--color-gold);
+      color: var(--color-white);
+    }
+  }
+
+  &.light {
+    background-color: var(--color-turquoise);
+    color: var(--color-white);
+
+    &:hover {
+      background-color: var(--color-turquoise);
+      color: var(--color-navy);
+    }
+  }
+}

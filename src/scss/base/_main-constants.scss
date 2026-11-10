@@ -1,0 +1,78 @@
+
+$color-navy:        #0b1f33;  // principal oscuro (header, footer, hero overlay)
+$color-navy-light:  #14304d;  // hover y variaciones
+$color-midnight:    #07131f;  // secciones oscuras con fotos (ofertas, footer)
+$color-gold:        #b8975a;  // acento principal (líneas, detalles, botones)
+$color-gold-light:  #d4b97f;  // hover sobre fondos oscuros
+$color-gold-dark:   #8f7340;  // texto dorado sobre fondo claro (mejor contraste)
+$color-ivory:       #faf7f2;  // fondo general del sitio
+$color-sand:        #efe7da;  // secciones alternas
+$color-stone:       #d9d0c1;  // bordes y divisores
+$color-charcoal:    #2b2b2b;  // texto principal
+$color-gray:        #6b6b6b;  // texto secundario
+$color-white:       #ffffff;
+$color-turquoise:   #3fa7a3;  // acento caribeño, usar con moderación
+$color-success:     #3e7c5a;
+$color-error:       #b3433a;
+
+$font-heading: 'Cormorant Garamond', 'Georgia', serif;
+$font-body:    'Jost', 'Helvetica Neue', Arial, sans-serif;
+$font-weight-light:   300;
+$font-weight-regular: 400;
+$font-weight-medium:  500;
+$font-weight-semibold: 600;
+
+$space-xs:  0.5rem;   
+$space-sm:  1rem;     
+$space-md:  1.5rem;   
+$space-lg:  2.5rem;   
+$space-xl:  4rem;     
+$space-xxl: 6rem;     
+
+$container-max: 1280px;
+$container-padding-mobile: 1.25rem;
+$container-padding-desktop: 2.5rem;
+$section-padding-mobile: 4rem;
+$section-padding-desktop: 7rem;
+
+$radius-sm: 2px;
+$radius-md: 4px;
+$shadow-soft:  0 4px 20px rgba($color-navy, 0.08);
+$shadow-card:  0 10px 40px rgba($color-navy, 0.12);
+
+$transition-fast: 0.2s ease;
+$transition-base: 0.35s ease;
+$transition-slow: 0.6s ease;
+
+$z-header: 100;
+$z-modal: 200;
+$z-chat: 300;
+
+// =====================================================
+// MIXINS
+// =====================================================
+
+// Uso: @include respond-to('md') { ... }  → aplica desde 768px hacia arriba
+
+
+// Centra y limita el ancho del contenido
+@mixin container {
+  width: 100%;
+  max-width: $container-max;
+  margin-inline: auto;
+  padding-inline: $container-padding-mobile;
+
+  @include respond-to('md') {
+    padding-inline: $container-padding-desktop;
+  }
+}
+
+// Etiqueta superior pequeña (BIENVENIDO, ALOJAMIENTO, etc.)
+@mixin eyebrow {
+  font-family: $font-body;
+  font-size: 0.75rem;
+  font-weight: $font-weight-medium;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: $color-gold-dark;
+}

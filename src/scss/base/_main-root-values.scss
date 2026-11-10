@@ -1,0 +1,51 @@
+@use "main-constants" as const;
+
+:root {
+  // font
+  --font-heading: #{const.$font-heading};
+  --font-body: #{const.$font-body};
+  --font-weight-light: #{const.$font-weight-light};
+  --font-weight-regular: #{const.$font-weight-regular};
+  --font-weight-medium: #{const.$font-weight-medium};
+  --font-weight-semibold: #{const.$font-weight-semibold};
+  // colors
+  --color-navy: #{const.$color-navy};
+  --color-navy-light: #{const.$color-navy-light};
+  --color-midnight: #{const.$color-midnight};
+  --color-gold: #{const.$color-gold};
+  --color-gold-dark: #{const.$color-gold-dark};
+  --color-gold-light: #{const.$color-gold-light};
+  --color-ivory: #{const.$color-ivory};
+  --color-sand: #{const.$color-sand};
+  --color-stone: #{const.$color-stone};
+  --color-charcoal: #{const.$color-charcoal};
+  --color-gray: #{const.$color-gray};
+  --color-white: #{const.$color-white};
+  --color-turquoise: #{const.$color-turquoise};
+  --color-success: #{const.$color-success};
+  --color-error: #{const.$color-error};
+  //   borders & shadows
+  --radius-sm: #{const.$radius-sm};
+  --radius-md: #{const.$radius-md};
+  --shadow-soft: #{const.$shadow-soft};
+  --shadow-card: #{const.$shadow-card};
+  //   transitions
+  --transition-fast: #{const.$transition-fast};
+  --transition-base: #{const.$transition-base};
+  --transition-slow: #{const.$transition-slow};
+  //   space
+  --space-xs: #{const.$space-xs};
+  --space-sm: #{const.$space-sm};
+  --space-md: #{const.$space-md};
+  --space-lg: #{const.$space-lg};
+  --space-xl: #{const.$space-xl};
+  --space-xxl: #{const.$space-xxl};
+  --container-max: #{const.$container-max};
+  --container-padding-mobile: #{const.$container-padding-mobile};
+  --container-padding-desktop: #{const.$container-padding-desktop};
+  --section-padding-mobile: #{const.$section-padding-mobile};
+  --section-padding-desktop: #{const.$section-padding-desktop};
+  --z-header: #{const.$z-header};
+  --z-modal: #{const.$z-modal};
+  --z-chat: #{const.$z-chat};
+}

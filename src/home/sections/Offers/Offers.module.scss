@@ -1,0 +1,124 @@
+@forward "/src/scss/base/";
+@use "/src/scss/common/" as *;
+@use "/src/scss/mobile/" as *;
+
+.offers_section {
+  @include section;
+  @include background-section-style;
+  background-color: var(--color-midnight);
+}
+
+.offers_container {
+  @include container;
+}
+
+.offers_wrapper {
+  @include wrapper;
+}
+
+.offers_content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  @include mobile {
+    padding: 0.82rem;    
+  }
+
+  .offers_content_header {
+    text-align: center;
+    padding: 2.8ex 0;
+    color: var(--color-ivory);
+  }
+
+  .offers_content_grid {
+    display: grid;
+    grid-template-columns: repeat(3, 400px);
+    gap: 3.8rem;
+    padding: 2.8ex 0;
+    @include mobile {
+      display: flex;
+      flex-direction: column;
+    }
+    @include tablet {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .offer_card {
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+      gap: 1.5rem;
+      width: 100%;
+      padding: 2rem;
+      border-radius: var(--radius-md);
+
+      .overlay {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        background: linear-gradient(
+          to top,
+          rgba(11, 31, 51, 0.9) 0%,
+          rgba(11, 31, 51, 0.55) 45%,
+          rgba(11, 31, 51, 0.15) 100%
+        );
+        transition: background-color 0.4s ease;
+      }
+
+      p {
+        position: relative;
+        z-index: 1;
+        color: var(--color-ivory);
+        letter-spacing: 0.098rem;
+        font-size: 1.23rem;
+    }
+    
+    span {
+        position: relative;
+        z-index: 1;
+        align-self: flex-start;
+        padding: 0.45rem 1rem;
+        font-size: 0.75rem;
+        font-weight: var(--font-weight-medium);
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        line-height: 1;
+        color: var(--color-ivory);
+        background-color: var(--color-gold);
+        border-radius: 999px;
+      }
+
+      .offer_title {
+        font-size: 1.5rem;
+        font-weight: var(--font-weight-regular);
+      }
+
+      &:hover .overlay {
+        background-color: rgba(11, 31, 51, 0.2);
+      }
+    }
+
+    .background {
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      min-height: 630px;
+    }
+
+    .dinner {
+      background-image: url("/sections/offers/dinner.jpg");
+    }
+    .date {
+      background-image: url("/sections/offers/date.jpg");
+    }
+    .breakfast {
+      background-image: url("/sections/offers/breakfast.jpg");
+    }
+  }
+}

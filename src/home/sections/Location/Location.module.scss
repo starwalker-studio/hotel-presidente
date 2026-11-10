@@ -1,0 +1,259 @@
+@forward "/src/scss/base/";
+@use "/src/scss/common/" as *;
+
+.location_section {
+  @include section;
+  @include background-section-style;
+  background-color: var(--color-ivory);
+}
+
+.location_container {
+  @include container;
+}
+
+.location_wrapper {
+  @include wrapper;
+}
+
+.location_grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 4rem;
+  align-items: center;
+  padding: 2rem;
+}
+
+// ---------- IZQUIERDA ----------
+.location_info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+
+  .eyebrow {
+    display: block;
+  }
+
+  h2 {
+    margin-bottom: 0;
+  }
+}
+
+.contact_list {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0.5rem;
+
+  li {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 1rem;
+    padding: 0.9rem 0;
+    border-bottom: 1px solid
+      color-mix(in srgb, var(--color-stone) 60%, transparent);
+  }
+
+  a {
+    color: var(--color-navy);
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: var(--color-gold-dark);
+    }
+  }
+}
+
+.contact_label {
+  font-size: 0.75rem;
+  font-weight: var(--font-weight-medium);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-gold-dark);
+}
+
+.distances {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+
+  li {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    background-color: var(--color-sand);
+    border-radius: var(--radius-md);
+  }
+
+  strong {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    font-weight: var(--font-weight-medium);
+    color: var(--color-navy);
+  }
+
+  span {
+    font-size: 0.9rem;
+    color: var(--color-gray);
+  }
+}
+
+// ---------- MAPA ----------
+.map {
+  position: relative;
+  min-height: 520px;
+  overflow: hidden;
+  border: 1px solid var(--color-stone);
+  border-radius: var(--radius-md);
+  box-shadow: 0 10px 40px rgba(11, 31, 51, 0.12);
+
+  svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 520px;
+  }
+}
+
+.land {
+  fill: #eee9df;
+}
+.park {
+  fill: #cfe0c3;
+}
+.sea {
+  fill: #b9dde6;
+}
+.beach {
+  fill: none;
+  stroke: #f1e6c8;
+  stroke-width: 8;
+}
+.street_minor {
+  stroke: #ffffff;
+  stroke-width: 7;
+  fill: none;
+  stroke-linecap: round;
+}
+.road_outline {
+  fill: none;
+  stroke: #d8cfa8;
+  stroke-width: 16;
+  stroke-linecap: round;
+}
+.road {
+  fill: none;
+  stroke: #f7e3a1;
+  stroke-width: 11;
+  stroke-linecap: round;
+}
+
+.road_label,
+.map_label,
+.sea_label {
+  font-family: var(--font-body);
+  pointer-events: none;
+}
+
+.road_label {
+  font-size: 12px;
+  font-weight: 500;
+  fill: #6d5d2f;
+  letter-spacing: 0.08em;
+}
+.map_label {
+  font-size: 12px;
+  fill: #7b7b7b;
+}
+.sea_label {
+  font-size: 14px;
+  font-style: italic;
+  fill: #5f93a3;
+  letter-spacing: 0.12em;
+}
+
+.pin {
+  fill: #d8453b;
+  stroke: #ffffff;
+  stroke-width: 2;
+}
+.pin_dot {
+  fill: #ffffff;
+}
+.pin_shadow {
+  fill: rgba(0, 0, 0, 0.25);
+}
+
+.map_card {
+  position: absolute;
+  top: 1.25rem;
+  left: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  max-width: 250px;
+  padding: 0.9rem 1.1rem;
+  font-size: 0.85rem;
+  color: var(--color-gray);
+  background-color: #ffffff;
+  border-radius: var(--radius-md);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+
+  strong {
+    font-size: 0.95rem;
+    color: var(--color-charcoal);
+  }
+}
+
+.map_rating {
+  color: var(--color-gold-dark);
+}
+
+.map_controls {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+
+  span {
+    display: grid;
+    place-items: center;
+    width: 2.4rem;
+    height: 2.4rem;
+    font-size: 1.3rem;
+    color: var(--color-gray);
+    user-select: none;
+
+    & + span {
+      border-top: 1px solid var(--color-stone);
+    }
+  }
+}
+
+// ---------- RESPONSIVE ----------
+@media (max-width: 1024px) {
+  .location_grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding: 1rem 0;
+  }
+
+  .map,
+  .map svg {
+    min-height: 380px;
+  }
+}
+
+@media (max-width: 560px) {
+  .contact_list li {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
+
+  .distances {
+    grid-template-columns: 1fr;
+  }
+}

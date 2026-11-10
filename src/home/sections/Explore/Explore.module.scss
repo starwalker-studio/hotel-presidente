@@ -1,0 +1,132 @@
+@forward "/src/scss/base/";
+@use "/src/scss/common/" as *;
+@use "/src/scss/mobile/" as *;
+
+.explore_section {
+  @include section;
+}
+
+.explore_container {
+  @include container;
+}
+
+.explore_wrapper {
+  @include wrapper;
+}
+
+.explore_info {
+  padding: 2rem;
+  margin: 1ex 0;
+  @include mobile {
+    padding: 0.88rem;
+  }
+}
+
+.explore_header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  padding: 2ex 0;
+  margin-top: 2ex;
+  margin-bottom: 2ex;
+}
+
+.explore_content_grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4ex;
+  justify-content: start;
+  align-items: start;
+  @include mobile {
+    grid-template-columns: 1fr 1fr;
+    grid-row: auto auto;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+  }
+  @include tablet {
+    grid-template-columns: 1fr 1fr;
+    grid-row: auto auto;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+  }
+}
+
+.explore_card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px 4px 0px 0px;
+  background-color: var(--color-white);
+  .explore_img {
+    img {
+      border-radius: 4px 4px 0px 0px;
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      @include mobile {
+        height: 200px;
+      }
+    }
+  }
+  .explore_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border-radius: 0px 0px 4px 4px;
+    border-left: 1px solid
+      color-mix(in srgb, var(--color-stone) 52%, transparent);
+    border-right: 1px solid
+      color-mix(in srgb, var(--color-stone) 52%, transparent);
+    border-bottom: 1px solid
+      color-mix(in srgb, var(--color-stone) 52%, transparent);
+    padding: 4.8ex;
+    @include mobile {
+      justify-content: start;
+      align-items: start;
+      padding: 1.889ex;
+    }
+    .explore_content_header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 5px;
+      @include mobile {
+        padding: 5px 0;
+        justify-content: start;
+        align-items: start;
+      }
+      p {
+        font-size: 1.28rem;
+        letter-spacing: 0.089ex;
+        font-weight: var(--font-weight-regular);
+        @include mobile {
+          font-size: 0.999rem;
+        }
+      }
+    }
+    .explore_desc {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      letter-spacing: 0.087ex;
+      margin: 1.5ex 0;
+      font-size: 1rem;
+      @include mobile {
+        font-size: 0.789rem;
+      }
+    }
+  }
+}
+
+.explore_content_button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3ex;
+  margin: 5ex 0;
+}

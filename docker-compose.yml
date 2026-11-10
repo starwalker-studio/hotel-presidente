@@ -1,0 +1,12 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        VITE_API_URL: ${VITE_API_URL:-}
+    image: hotel-presidente-web:latest
+    container_name: hotel-presidente-website-prod
+    restart: unless-stopped
+    ports:
+      - "8081:80"

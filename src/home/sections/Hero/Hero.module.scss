@@ -1,0 +1,78 @@
+@forward "/src/scss/base/";
+@use "/src/scss/common/" as *;
+
+.hero_section {
+  @include section;
+  @include background-section-style;
+  background-image: url("/sections/hero/hero-background.jpg");
+
+  // Altura mínima: pantalla completa, nunca menos de 730px
+  min-height: max(730px, 100vh);        // fallback
+  min-height: max(730px, 100svh);       // móviles modernos
+
+  // Compensa el header fixed (mídelo en DevTools y ajusta)
+  padding-block: 10rem 3rem;
+}
+
+.overlay {
+  @include overlay-style;
+}
+
+.hero_container {
+  @include container;
+}
+
+.hero_wrapper {
+  @include wrapper;
+}
+
+.hero_content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+  text-align: center;
+
+  .hero_title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+
+    h1 {
+      max-width: 1600px;
+      color: #fff;
+      text-wrap: balance;
+    }
+
+    p {
+      max-width: 940px;
+      font-size: 1.138rem;
+      font-weight: var(--font-weight-regular);
+      letter-spacing: 0.11em;
+      color: rgba(255, 255, 255, 0.9);
+    }
+  }
+
+  .hero_buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .hero_footer_info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem 3rem;
+    margin-top: 1rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+    font-size: 0.85rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.85);
+  }
+}
